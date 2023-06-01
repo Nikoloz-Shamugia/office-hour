@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" />
+    <br>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" />
+    <br>
+    <button onclick="displayNames()">Display Names</button>
+  
+    <div id="result"></div>
+    <h1></h1>
+    <span></span>
+
+
+    <script>
+            // davaleba #1
+        function filterNamesArray(namesArray) {
+            const filteredArray = namesArray.filter(nameLength => nameLength.length > 5);
+             return filteredArray;
+        }
+        let namesArray1 = ['niko', 'lasha', 'mamuka', 'anastasia'];
+        let filteredNames = filterNamesArray(namesArray1);
+        console.log(filteredNames);
+
+            // davaleba #2
+        function getSum (a , b){
+            let x = a + b ;
+            return x ;
+        }
+        let sum = getSum(5,7)
+        console.log(sum)
+            // davaleba #3
+        function getSum (a , b){
+            let x = a - b ;
+            return x ;
+        }
+        let sum2 = getSum(5,7)
+        console.log(sum)
+            // davaleba #4
+        function filterByAge ( ageArray ){
+            const filteredByAge = ageArray.find( person => person.age > 25 )
+            return {...filteredByAge  ,isRegistered : true}
+        }
+        let personAge = [
+            { 
+                age : 13
+            } ,
+            { 
+                age : 33
+            } ,
+            { 
+                age : 17
+            } ,
+            { 
+                age : 10
+            } ,
+        ]
+        let filteredPersonAge = filterByAge(personAge)
+        console.log(filteredPersonAge)
+            // davaleba #5
+        const p = document.querySelector('p') ;
+        p.textContent = 'not click' ;
+        p.style.color = 'red' ;
+        p.style.fontPalette = '40px' ;
+        p.addEventListener('click' , () => {
+            p.textContent ='clicked'
+        }) ;
+        function displayNames() {
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+
+            let resultDiv = document.createElement("div");
+            resultDiv.innerHTML = "First Name: " + firstName + "<br />Last Name: "+ lastName;
+
+            let result = document.getElementById("result");
+            result.appendChild(resultDiv)
+        }
+        let person = {
+            name : 'jaba',
+            age : 24
+        }
+        let firstname2 = person.name;
+        let age2 = person.age;
+        const h1 = document.querySelector('h1')
+        h1.textContent = firstname2
+        const span = document.querySelector('span')
+        span.textContent = age2
+    </script>
+</body>
+</html>
